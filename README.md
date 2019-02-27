@@ -5,7 +5,7 @@ PHP class where you can provide an HTML file which has CSS, and it will use it f
 - Imagick PHP
 
 ## Example usage
-```
+```php
 <?php
 $IMHTML = new ImagickHTML('image.html', [
   'file_path' => $file_path,
@@ -17,7 +17,6 @@ $IMHTML = new ImagickHTML('image.html', [
 ]);
 $IMHTML->save();
 $IMHTML->output();
-?>
 ```
 
 ## Notice
@@ -28,7 +27,7 @@ $IMHTML->output();
 /!\ line-height: style needs work
 
 ## Coolest part? The "CSS to XPath" function I wrote for it! Its a private util but it is sweet. The only thing it doesn't do is attribute selector but that would be easy to implement. Maybe I will one day, but no time.
-```
+```php
 <?php
 function css_selector_to_xpath($css_selector) {
   $ors = preg_split('/\,\s*/', $css_selector);
@@ -60,5 +59,4 @@ function css_selector_to_xpath($css_selector) {
   $xpaths = implode(' | ', $xpaths);
   return $xpaths;
 }
-?>
 ```
